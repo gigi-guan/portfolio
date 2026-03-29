@@ -13,18 +13,15 @@
 </head>
 
 <body>
-    <!-- Ambient Background -->
     <div class="ambient-background">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
     </div>
 
-    <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
-    <!-- Navigation -->
     <nav class="glass-nav">
         <div class="logo">Gigi.</div>
         <ul class="nav-links">
@@ -35,39 +32,49 @@
     </nav>
 
     <main style="padding-top: 25vh; max-width: 1200px; margin: 0 auto; min-height: 100vh; padding-bottom: 100px; padding-left: 40px; padding-right: 40px;">
-        
-        <!-- Intro -->
-        <section class="case-study-hero" style="text-align: center; margin-bottom: 120px;">
-            <h1 class="hero-title editorial-title" style="font-size: 6vw; margin-bottom: 30px;">Chat<span class="italic-accent">CHW</span></h1>
-            <p class="hero-subtitle" style="margin: 0 auto; max-width: 800px; font-size: 1.25rem;">
+
+        <!-- Hero -->
+        <section style="text-align: center; margin-bottom: 120px;">
+            <h1 class="editorial-title" style="font-size: 6vw; margin-bottom: 30px;">Chat<span class="italic-accent">CHW</span></h1>
+            <p style="margin: 0 auto; max-width: 800px; font-size: 1.25rem; color: var(--text-muted); line-height: 1.8;">
                 Clinical decision support architecture designed for community health workers. Orchestrated a robust testing pipeline capable of processing thousands of simulated patient narratives through complex clinical logic.
             </p>
         </section>
 
         <!-- 1. Figma Prototype -->
-        <section class="demo-section project-card" style="margin-bottom: 60px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+        <section class="project-card" style="margin-bottom: 60px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
             <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 300px;">
+                <div style="flex: 1; min-width: 280px;">
                     <h2 class="section-title" style="font-size: 3rem; text-align: left; margin-bottom: 20px;">Figma <span class="italic-accent">Prototype</span></h2>
                     <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">High-fidelity interactive prototype mapping out the precise flow for community health workers to log diagnostics.</p>
                     <a href="https://www.figma.com/proto/IJSZZeDvlD0N1ZTTheoeWU/ChatCHW-Interface?node-id=1-3320&t=M04LPM3V13RljwBh-1" target="_blank" class="btn primary-btn">View Figma Prototype &rarr;</a>
                 </div>
-                <div style="flex: 1.2; min-width: 300px; background: rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; position: relative;">
-                    <img src="assets/chatchw_figmascreen.png" alt="Figma Prototype" style="width: 100%; height: 100%; object-fit: contain; opacity: 1;">
+                <!-- Phone mockup: constrained by width, no black container, clean rounded corners -->
+                <div style="flex: 1; min-width: 280px; display: flex; align-items: center; justify-content: center; padding: 20px 0;">
+                    <img
+                        src="assets/chatchw_figmascreen.png"
+                        alt="Figma Prototype"
+                        style="width: 50%; height: auto; border-radius: 24px; box-shadow: 0 30px 80px rgba(0,0,0,0.5); display: block;"
+                    >
                 </div>
             </div>
         </section>
 
-        <!-- 2. HTML Application Demo -->
-        <section class="demo-section project-card" style="margin-bottom: 120px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+        <!-- 2. HTML Demo -->
+        <section class="project-card" style="margin-bottom: 120px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
             <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap; flex-direction: row-reverse;">
-                <div style="flex: 1; min-width: 300px;">
+                <div style="flex: 1; min-width: 280px;">
                     <h2 class="section-title" style="font-size: 3rem; text-align: left; margin-bottom: 20px;">Live HTML <span class="italic-accent">Demo</span></h2>
                     <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">Fully functional HTML/CSS implementation of the patient diagnostic intake interface, capturing key demographics and routing logic.</p>
                     <a href="https://gigi-guan.github.io/chw_demo/" target="_blank" class="btn primary-btn">View App Demo &rarr;</a>
                 </div>
-                <div style="flex: 1.5; min-width: 300px; background: rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative;">
-                    <img src="assets/chatchw_demoscreen.png" alt="HTML Demo" style="width: 100%; height: 100%; object-fit: contain; opacity: 1;">
+                <!-- Desktop screenshot: full width, no black container, clean corners -->
+                <div style="flex: 1.5; min-width: 280px; display: flex; align-items: center; justify-content: center; padding: 20px 0;">
+                    <img
+                        src="assets/chatchw_demoscreen.png"
+                        alt="HTML Demo"
+                        style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 30px 80px rgba(0,0,0,0.5); display: block;"
+                    >
                 </div>
             </div>
         </section>
@@ -78,6 +85,7 @@
                 Python &middot; Docker &middot; CHT &middot; XLSForms &middot; Figma &middot; HTML/CSS/JS
             </p>
         </div>
+
     </main>
 
     <footer>
