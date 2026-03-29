@@ -218,11 +218,12 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
     justify-content: center;
 }
 .project-card:nth-child(3) .project-image img {
-    width: 32%; /* Keeps the width balanced with the left card */
-    height: 80%; /* Stops the image from exploding vertically */
-    object-fit: cover; /* THE MAGIC FIX: Crops the extra bottom of the long screenshot */
-    object-position: top center; /* Keeps the phone notch/header visible at the top */
-    border-radius: 36px; /* Slices off the white Figma corners */
+    width: 45%; /* Matches ChatCHW width exactly */
+    height: 100%; /* Lets it bleed off the bottom */
+    object-fit: cover; 
+    object-position: top center; 
+    border-radius: 38px; /* Back up to 38px to aggressively slice off the white corners! */
+    margin-top: -2px; /* Shaves off any tiny white line at the very top edge */
     box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(255, 210, 180, 0.4);
 }
 .project-card:nth-child(3) .project-info h3,
