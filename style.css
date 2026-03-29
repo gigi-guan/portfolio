@@ -198,9 +198,9 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
     justify-content: center;
 }
 .project-card:nth-child(2) .project-image img {
-    height: 92%;
+    height: auto;
+    width: 45%;
     border-radius: 20px;
-    overflow: hidden; 
     box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(80, 180, 160, 0.4);
 }
 .project-card:nth-child(2) .project-info h3,
@@ -218,9 +218,9 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
     justify-content: center;
 }
 .project-card:nth-child(3) .project-image img {
-    height: 92%;
+    height: auto;
+    width: 45%;
     border-radius: 20px;
-    overflow: hidden; 
     box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(255, 210, 180, 0.4);
 }
 .project-card:nth-child(3) .project-info h3,
