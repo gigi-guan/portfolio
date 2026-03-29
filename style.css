@@ -193,13 +193,13 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
 /* 2. ChatCHW — mint/teal */
 .project-card:nth-child(2) .project-image {
     background: linear-gradient(135deg, rgba(180, 230, 220, 0.8), rgba(220, 245, 240, 0.6));
-    padding-top: 20px;
-    align-items: center;
+    padding-top: 0px; /* Removes weird spacing */
+    align-items: center; /* Centers perfectly */
     justify-content: center;
 }
 .project-card:nth-child(2) .project-image img {
-    height: auto;
-    width: 45%;
+    height: 75%; /* Locks the vertical length */
+    width: auto; /* Lets the width adjust naturally */
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(80, 180, 160, 0.4);
 }
@@ -213,15 +213,14 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
 /* 3. Skin2Care — peach/beige */
 .project-card:nth-child(3) .project-image {
     background: linear-gradient(135deg, rgba(230,220,210, 0.8), rgba(255,240,230, 0.6));
-    padding-top: 50px; /* Gives it breathing room from the top edge */
-    align-items: flex-start; 
+    padding-top: 0px; /* Removes weird spacing */
+    align-items: center; /* Centers perfectly */
     justify-content: center;
 }
 .project-card:nth-child(3) .project-image img {
+    height: 75%; /* PERFECTLY matches ChatCHW vertical length */
     width: auto; 
-    height: auto; /* THIS IS THE FIX: Lets it push past the bottom and get chopped flat */
-    border-radius: 38px; 
-    margin-top: -2px; 
+    border-radius: 36px; /* Slices off the Figma corners */
     box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(255, 210, 180, 0.4);
 }
 .project-card:nth-child(3) .project-info h3,
