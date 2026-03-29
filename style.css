@@ -218,8 +218,8 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
     justify-content: center;
 }
 .project-card:nth-child(3) .project-image img {
-    width: 38%; 
-    height: auto; /* THIS IS THE FIX: Lets it push past the bottom and get chopped flat */
+    width: auto; 
+    height: 85%; /* THIS IS THE FIX: Lets it push past the bottom and get chopped flat */
     border-radius: 38px; 
     margin-top: -2px; 
     box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(255, 210, 180, 0.4);
