@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatCHW - Case Study</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+</head>
+
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo">Gigi.</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home"><span>I.</span> Home</a></li>
+            <li><a href="index.html#projects"><span>II.</span> Projects</a></li>
+            <li><a href="index.html#about"><span>III.</span> About</a></li>
+        </ul>
+    </nav>
+
+    <main style="padding-top: 25vh; max-width: 1200px; margin: 0 auto; min-height: 100vh; padding-bottom: 100px; padding-left: 40px; padding-right: 40px;">
+        
+        <!-- Intro -->
+        <section class="case-study-hero" style="text-align: center; margin-bottom: 120px;">
+            <h1 class="hero-title editorial-title" style="font-size: 6vw; margin-bottom: 30px;">Chat<span class="italic-accent">CHW</span></h1>
+            <p class="hero-subtitle" style="margin: 0 auto; max-width: 800px; font-size: 1.25rem;">
+                Clinical decision support architecture designed for community health workers. Orchestrated a robust testing pipeline capable of processing thousands of simulated patient narratives through complex clinical logic.
+            </p>
+        </section>
+
+        <!-- 1. Figma Prototype -->
+        <section class="demo-section project-card" style="margin-bottom: 60px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title" style="font-size: 3rem; text-align: left; margin-bottom: 20px;">Figma <span class="italic-accent">Prototype</span></h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">High-fidelity interactive prototype mapping out the precise flow for community health workers to log diagnostics.</p>
+                    <a href="https://www.figma.com/proto/IJSZZeDvlD0N1ZTTheoeWU/ChatCHW-Interface?node-id=1-3320&t=M04LPM3V13RljwBh-1" target="_blank" class="btn primary-btn">View Figma Prototype &rarr;</a>
+                </div>
+                <div style="flex: 1.2; min-width: 300px; background: rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <img src="assets/chatchw_figmascreen.png" alt="Figma Prototype" style="width: 100%; height: 100%; object-fit: contain; opacity: 1;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. HTML Application Demo -->
+        <section class="demo-section project-card" style="margin-bottom: 120px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap; flex-direction: row-reverse;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title" style="font-size: 3rem; text-align: left; margin-bottom: 20px;">Live HTML <span class="italic-accent">Demo</span></h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">Fully functional HTML/CSS implementation of the patient diagnostic intake interface, capturing key demographics and routing logic.</p>
+                    <a href="https://gigi-guan.github.io/chw_demo/" target="_blank" class="btn primary-btn">View App Demo &rarr;</a>
+                </div>
+                <div style="flex: 1.5; min-width: 300px; background: rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <img src="assets/chatchw_demoscreen.png" alt="HTML Demo" style="width: 100%; height: 100%; object-fit: contain; opacity: 1;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Row -->
+        <div style="text-align: center; padding: 30px; background: var(--bg-elevated); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 100px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <p style="font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin: 0;">
+                Python &middot; Docker &middot; CHT &middot; XLSForms &middot; Figma &middot; HTML/CSS/JS
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Gigi. Built with passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

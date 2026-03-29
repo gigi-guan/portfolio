@@ -1,0 +1,241 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+.lp{font-family:'DM Sans',sans-serif;color:var(--color-text-primary)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.nav-logo{font-family:'Space Mono',monospace;font-size:16px;font-weight:700}
+.nav-logo span{color:#7F77DD}
+.nav-cta{padding:9px 20px;background:#1a1a1a;color:white;border:none;border-radius:20px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif}
+
+.hero{padding:64px 32px 48px;text-align:center;position:relative}
+.hero-badge{display:inline-block;font-size:12px;font-weight:500;background:#EEEDFE;color:#534AB7;padding:5px 14px;border-radius:20px;margin-bottom:20px}
+.hero-h1{font-size:48px;font-weight:700;line-height:1.1;margin-bottom:16px;letter-spacing:-0.02em}
+.hero-h1 em{font-style:normal;color:#7F77DD}
+.hero-sub{font-size:17px;color:var(--color-text-secondary);max-width:520px;margin:0 auto 32px;line-height:1.6}
+.hero-input-row{display:flex;gap:8px;max-width:440px;margin:0 auto 16px}
+.hero-email{flex:1;padding:13px 18px;border-radius:12px;border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);font-size:14px;font-family:'DM Sans',sans-serif;color:var(--color-text-primary);outline:none}
+.hero-email:focus{border-color:#7F77DD}
+.hero-join{padding:13px 22px;background:#1a1a1a;color:white;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap;transition:transform .1s}
+.hero-join:active{transform:scale(0.97)}
+.hero-social{font-size:12px;color:var(--color-text-secondary)}
+.hero-social strong{color:var(--color-text-primary)}
+
+.steps-section{padding:48px 32px;border-top:0.5px solid var(--color-border-tertiary)}
+.section-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-secondary);text-align:center;margin-bottom:8px}
+.section-title{font-size:28px;font-weight:700;text-align:center;margin-bottom:32px;letter-spacing:-0.01em}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step-card{padding:20px;border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);position:relative}
+.step-num{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:#7F77DD;margin-bottom:12px}
+.step-icon{font-size:28px;margin-bottom:10px}
+.step-title{font-size:15px;font-weight:700;color:var(--color-text-primary);margin-bottom:6px}
+.step-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+
+.features-section{padding:48px 32px;border-top:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feat-card{padding:18px;border-radius:var(--border-radius-lg);background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary)}
+.feat-icon{font-size:22px;margin-bottom:8px}
+.feat-title{font-size:14px;font-weight:700;color:var(--color-text-primary);margin-bottom:4px}
+.feat-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.6}
+.feat-badge{display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:10px;margin-top:6px}
+.fb-new{background:#EEEDFE;color:#534AB7}
+.fb-soon{background:var(--color-background-secondary);color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary)}
+
+.compare-section{padding:48px 32px;border-top:0.5px solid var(--color-border-tertiary)}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:620px;margin:0 auto}
+.compare-card{padding:20px;border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary)}
+.compare-card.us{border:2px solid #7F77DD}
+.compare-head{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.compare-badge{font-size:11px;font-weight:500;padding:3px 8px;border-radius:10px}
+.cb-us{background:#EEEDFE;color:#534AB7}
+.cb-them{background:var(--color-background-secondary);color:var(--color-text-secondary)}
+.compare-name{font-size:15px;font-weight:700}
+.compare-item{display:flex;gap:8px;align-items:flex-start;font-size:13px;margin-bottom:6px}
+.ci-icon{flex-shrink:0;margin-top:1px}
+.ci-check{color:#0F6E56}
+.ci-x{color:#A32D2D}
+
+.social-proof{padding:40px 32px;border-top:0.5px solid var(--color-border-tertiary);text-align:center;background:var(--color-background-secondary)}
+.proof-num{font-size:40px;font-weight:700;font-family:'Space Mono',monospace;color:#7F77DD}
+.proof-label{font-size:14px;color:var(--color-text-secondary);margin-bottom:24px}
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.testi{padding:16px;border-radius:var(--border-radius-lg);background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);text-align:left}
+.testi-text{font-size:13px;color:var(--color-text-primary);line-height:1.6;margin-bottom:10px;font-style:italic}
+.testi-author{font-size:12px;font-weight:500;color:var(--color-text-secondary)}
+
+.footer-cta{padding:48px 32px;border-top:0.5px solid var(--color-border-tertiary);text-align:center}
+.footer-h{font-size:28px;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em}
+.footer-sub{font-size:14px;color:var(--color-text-secondary);margin-bottom:24px}
+.footer-row{display:flex;gap:8px;max-width:440px;margin:0 auto}
+</style>
+
+<div class="lp">
+<div class="nav">
+  <div class="nav-logo">Clip<span>AI</span></div>
+  <button class="nav-cta">join waitlist</button>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">AI-powered video editing for creators</div>
+  <h1 class="hero-h1">record it.<br><em>we edit it.</em></h1>
+  <p class="hero-sub">ClipAI automatically cuts your silences, stumbles, and filler words — then adds trending captions, music, and effects. Post-ready video in seconds.</p>
+  <div class="hero-input-row">
+    <input class="hero-email" type="email" placeholder="your@email.com" id="email-input"/>
+    <button class="hero-join" onclick="joinWaitlist()">join waitlist →</button>
+  </div>
+  <div class="hero-social" id="social-text"><strong>1,247 creators</strong> already on the waitlist</div>
+</div>
+
+<div class="steps-section">
+  <div class="section-label">how it works</div>
+  <div class="section-title">from raw footage to ready-to-post</div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-icon">🎤</div>
+      <div class="step-title">record or upload</div>
+      <div class="step-desc">shoot your talking-head video or upload raw footage from your phone</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-icon">✂️</div>
+      <div class="step-title">AI auto-edits</div>
+      <div class="step-desc">AI removes silences, stumbles, and "um"s — cutting your video down to the best takes automatically</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-icon">✨</div>
+      <div class="step-title">add style</div>
+      <div class="step-desc">choose from trending captions, viral music, and one-tap effects matched to what's hot this week</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <div class="step-icon">🚀</div>
+      <div class="step-title">post directly</div>
+      <div class="step-desc">publish straight to TikTok, Instagram Reels, or YouTube Shorts without leaving the app</div>
+    </div>
+  </div>
+</div>
+
+<div class="features-section">
+  <div class="section-label">features</div>
+  <div class="section-title">everything a UGC creator needs</div>
+  <div class="features-grid">
+    <div class="feat-card">
+      <div class="feat-icon">🤫</div>
+      <div class="feat-title">silence &amp; stumble removal</div>
+      <div class="feat-desc">AI detects every pause, "um", and false start and removes them instantly</div>
+      <div class="feat-badge fb-new">core feature</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">💬</div>
+      <div class="feat-title">auto captions</div>
+      <div class="feat-desc">98% accurate captions auto-synced to your voice — with trending big-text styles</div>
+      <div class="feat-badge fb-new">core feature</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎵</div>
+      <div class="feat-title">trending music match</div>
+      <div class="feat-desc">updated weekly with the most viral audio on TikTok &amp; Reels, auto-ducked under your voice</div>
+      <div class="feat-badge fb-new">core feature</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📈</div>
+      <div class="feat-title">trend score</div>
+      <div class="feat-desc">AI scores your video against what's performing this week and suggests tweaks</div>
+      <div class="feat-badge fb-new">core feature</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎞️</div>
+      <div class="feat-title">multi-clip threading</div>
+      <div class="feat-desc">stitch multiple recordings into one seamless video automatically</div>
+      <div class="feat-badge fb-soon">coming soon</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🤖</div>
+      <div class="feat-title">hook generator</div>
+      <div class="feat-desc">AI writes and overlays a hook text for your first 3 seconds to stop the scroll</div>
+      <div class="feat-badge fb-soon">coming soon</div>
+    </div>
+  </div>
+</div>
+
+<div class="compare-section">
+  <div class="section-label">why clipai</div>
+  <div class="section-title">built for real creators</div>
+  <div class="compare-grid">
+    <div class="compare-card us">
+      <div class="compare-head">
+        <span class="compare-badge cb-us">ClipAI</span>
+        <span class="compare-name">us</span>
+      </div>
+      <div class="compare-item"><span class="ci-icon ci-check">✓</span><span>auto-edits your real footage</span></div>
+      <div class="compare-item"><span class="ci-icon ci-check">✓</span><span>mobile-first, one-tap workflow</span></div>
+      <div class="compare-item"><span class="ci-icon ci-check">✓</span><span>trend-matched weekly</span></div>
+      <div class="compare-item"><span class="ci-icon ci-check">✓</span><span>direct publish to all platforms</span></div>
+      <div class="compare-item"><span class="ci-icon ci-check">✓</span><span>no editing skills needed</span></div>
+    </div>
+    <div class="compare-card">
+      <div class="compare-head">
+        <span class="compare-badge cb-them">others</span>
+        <span class="compare-name">everyone else</span>
+      </div>
+      <div class="compare-item"><span class="ci-icon ci-x">✗</span><span>AI avatars, not real creators</span></div>
+      <div class="compare-item"><span class="ci-icon ci-x">✗</span><span>desktop tools, manual steps</span></div>
+      <div class="compare-item"><span class="ci-icon ci-x">✗</span><span>static templates, not live trends</span></div>
+      <div class="compare-item"><span class="ci-icon ci-x">✗</span><span>export only, no publishing</span></div>
+      <div class="compare-item"><span class="ci-icon ci-x">✗</span><span>steep learning curve</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="social-proof">
+  <div class="proof-num" id="waitlist-count">1,247</div>
+  <div class="proof-label">creators waiting to get early access</div>
+  <div class="testimonials">
+    <div class="testi">
+      <div class="testi-text">"I spend 3 hours editing a 90-second video. If this works it's a game changer for me."</div>
+      <div class="testi-author">@maya.creates · TikTok UGC creator</div>
+    </div>
+    <div class="testi">
+      <div class="testi-text">"The stumble removal alone would save me so many retakes. I hate watching myself say um."</div>
+      <div class="testi-author">@jakereviewsit · 280k followers</div>
+    </div>
+    <div class="testi">
+      <div class="testi-text">"CapCut is getting close but I still spend forever on it. A real one-tap solution would be perfect."</div>
+      <div class="testi-author">@sofiabeautyugc · brand partner</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-cta">
+  <div class="footer-h">stop editing. start creating.</div>
+  <div class="footer-sub">join the waitlist — free early access for the first 500 creators</div>
+  <div class="footer-row">
+    <input class="hero-email" type="email" placeholder="your@email.com" id="email-input-2"/>
+    <button class="hero-join" onclick="joinWaitlist2()">get early access →</button>
+  </div>
+  <div style="font-size:12px;color:var(--color-text-secondary);margin-top:12px;text-align:center">no spam · unsubscribe anytime</div>
+</div>
+</div>
+
+<script>
+let count = 1247;
+function joinWaitlist(){
+  const v = document.getElementById('email-input').value;
+  if(!v || !v.includes('@')) { alert('please enter a valid email'); return; }
+  count++;
+  document.getElementById('waitlist-count').textContent = count.toLocaleString();
+  document.getElementById('social-text').innerHTML = '<strong>' + count.toLocaleString() + ' creators</strong> already on the waitlist — you\'re in!';
+  document.getElementById('email-input').value = '';
+  document.getElementById('email-input').placeholder = '🎉 you\'re on the list!';
+}
+function joinWaitlist2(){
+  const v = document.getElementById('email-input-2').value;
+  if(!v || !v.includes('@')) { alert('please enter a valid email'); return; }
+  count++;
+  document.getElementById('waitlist-count').textContent = count.toLocaleString();
+  document.getElementById('email-input-2').value = '';
+  document.getElementById('email-input-2').placeholder = '🎉 you\'re on the list!';
+}
+</script>

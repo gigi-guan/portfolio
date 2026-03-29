@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClipAI - Case Study</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+</head>
+
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo">Gigi.</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home"><span>I.</span> Home</a></li>
+            <li><a href="index.html#projects"><span>II.</span> Projects</a></li>
+            <li><a href="index.html#about"><span>III.</span> About</a></li>
+        </ul>
+    </nav>
+
+    <main style="padding-top: 25vh; max-width: 1200px; margin: 0 auto; min-height: 100vh; padding-bottom: 100px; padding-left: 40px; padding-right: 40px;">
+        
+        <!-- Intro -->
+        <section class="case-study-hero" style="text-align: center; margin-bottom: 120px;">
+            <h1 class="hero-title editorial-title" style="font-size: 6vw; margin-bottom: 30px;">Clip<span class="italic-accent">AI</span></h1>
+            <p class="hero-subtitle" style="margin: 0 auto; max-width: 800px; font-size: 1.25rem;">
+                ClipAI is an AI-powered UGC video editing app concept I designed and built end-to-end, from initial product thinking through a live working prototype. It addresses a critical friction point for creators: the agonizing hours spent manually cutting out silences, filler words, and syncing captions. By orchestrating a robust AI pipeline under the hood, ClipAI auto-edits raw talking-head footage into highly engaging shorts within seconds.
+            </p>
+        </section>
+
+        <!-- 1. Mobile App -->
+        <section class="demo-section project-card" style="margin-bottom: 60px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title" style="font-size: 3.5rem; text-align: left; margin-bottom: 20px; line-height: 1.1">Frictionless <span class="italic-accent">Mobile</span> Capture</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">The mobile interface operates as the creator's immediate sandbox. The primary objective is to drastically lower the activation energy required to start creating. Built using minimalist glass panes and massive hit-targets, users can jump into recording or pull content directly from the cloud instantly. The UX abstracts away complex timelines into simple, digestible draft cards, keeping the cognitive load entirely on the creative process.</p>
+                </div>
+                <div style="flex: 1.2; min-width: 300px; background: rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <img src="assets/clipai_mobile1.png" alt="Mobile App" style="width: 100%; height: 100%; object-fit: contain; opacity: 1;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Web Editor -->
+        <section class="demo-section project-card" style="margin-bottom: 60px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap; flex-direction: row-reverse;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title" style="font-size: 3.5rem; text-align: left; margin-bottom: 20px; line-height: 1.1">Advanced <span class="italic-accent">AI Web</span> Editor</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">For creators needing granular control, I designed a scalable desktop web editor environment. This interface introduces a 'Smart Timeline' that visually demarcates AI-generated cuts from user-retained footage. It features a sophisticated AI-powered reporting panel that grades the video's 'Hook Strength', scores its trend alignment (e.g. 87/100), and auto-suggests precise timestamp overlays, empowering the creator with data-driven editing decisions.</p>
+                </div>
+                <div style="flex: 1.5; min-width: 300px; background: rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <img src="assets/clipai_web.png" alt="Web Editor" style="width: 100%; height: 100%; object-fit: contain; opacity: 1;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Landing Page -->
+        <section class="demo-section project-card" style="margin-bottom: 60px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title" style="font-size: 3.5rem; text-align: left; margin-bottom: 20px; line-height: 1.1">High-Conversion <span class="italic-accent">Positioning</span></h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">To communicate the core value proposition efficiently, I engineered a highly-converting landing page. Architected around the compelling thesis 'record it. we edit it.', the page immediately builds trust. It utilizes a strategic bento-box feature breakdown, highlighting auto-captions, trending music match, and multi-clip threading, and culminates in an aggressive, gamified waitlist flow.</p>
+                </div>
+                <div style="flex: 1.5; min-width: 300px; background: rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <img src="assets/clipai_landing1.png" alt="Landing Page" style="width: 100%; height: 100%; object-fit: contain; opacity: 1;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Live AI Prototype -->
+        <section class="demo-section project-card" style="margin-bottom: 120px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap; flex-direction: row-reverse;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title" style="font-size: 3.5rem; text-align: left; margin-bottom: 20px; line-height: 1.1">The Functional <span class="italic-accent">Logic</span> Prototype</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">Design means nothing without execution. I developed a fully functional software prototype powered by Anthropic's Claude API, deployed on Vercel. By passing raw transcription arrays through a rigid JSON schema, the Large Language Model intelligently processes, grades, and physically truncates video block arrays in real-time, proving the technical viability of the product thesis.</p>
+                    <a href="https://clipaidemo.vercel.app/" target="_blank" class="btn primary-btn">Try The Prototype &rarr;</a>
+                </div>
+                <div style="flex: 1.5; min-width: 300px; background: rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <img src="assets/clipai_demo.png" alt="Live AI Prototype" style="width: 100%; height: 100%; object-fit: contain; opacity: 1;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Row -->
+        <div style="text-align: center; padding: 30px; background: var(--bg-elevated); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 100px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <p style="font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin: 0;">
+                HTML &middot; CSS &middot; JavaScript &middot; Anthropic Claude API &middot; Vercel &middot; Product Design &middot; UX Research
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Gigi. Built with passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gigi's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Advanced Animations & Physics -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+</head>
+
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Beautiful Dark Pool gradient handled in CSS -->
+
+    <nav class="glass-nav">
+        <div class="logo">Gigi.</div>
+        <ul class="nav-links">
+            <li><a href="#home"><span>I.</span> Home</a></li>
+            <li><a href="#projects"><span>II.</span> Projects</a></li>
+            <li><a href="#about"><span>III.</span> About</a></li>
+            <li><a href="#contact"><span>IV.</span> Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content centered-hero" style="text-align: center; width: 100%;">
+                <h1 class="hero-title editorial-title" style="margin-bottom: 20px;">Gigi <span class="italic-accent">Guan</span></h1>
+                <p class="hero-subtitle" style="max-width: 700px; margin: 0 auto; font-size: 1.3rem; line-height: 1.8;">
+                    UC Berkeley Economics & Data Science. I take ideas from zero to live demo. Building at the intersection of product strategy, user experience, and applied AI.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Featured <span class="italic-accent">Projects</span></h2>
+            <div class="projects-grid">
+
+                <div class="project-card glass-panel">
+                    <div class="project-image">
+                        <img src="assets/clipai_demo.png" alt="ClipAI Web Editor">
+                    </div>
+                    <div class="project-info">
+                        <h3>ClipAI</h3>
+                        <p>An AI-powered UGC video editing platform. Autobiographically engineered to transcribe, remove filler words, craft compelling hooks, score viral trends, and curate audio tracks.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JS</span>
+                            <span class="tech-tag">Claude API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="clipai.html" class="project-link">View Case Study</a>
+                            <a href="https://clipaidemo.vercel.app/" target="_blank" class="project-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-panel">
+                    <div class="project-image">
+                        <img src="assets/chatchw_figmascreen.png" alt="ChatCHW Dashboard">
+                    </div>
+                    <div class="project-info">
+                        <h3>ChatCHW</h3>
+                        <p>Clinical decision support architecture designed for community health workers. Orchestrated a robust testing pipeline capable of processing thousands of simulated patient narratives through complex clinical logic.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">CHT</span>
+                            <span class="tech-tag">XLSForms</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="chatchw.html" class="project-link">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-panel">
+                    <div class="project-image">
+                        <img src="assets/skin2care_screen.png" alt="Skincare Assistant">
+                    </div>
+                    <div class="project-info">
+                        <h3>Skincare Assistant App</h3>
+                        <p>A bespoke UX/UI conceptual design for an AI-powered skincare recommendation assistant. Meticulously engineered user flows focused on personalized health and cosmetic insights.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Figma</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.figma.com/proto/lZgEs7OwP08vA9optFuySw/Skincare-Assistant-Prototype?node-id=1-4&t=zbRestA3qLp0S42E-1"
+                                target="_blank" class="project-link">Figma Prototype</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section" style="padding: 15vh 0;">
+            <h2 class="section-title"><span class="italic-accent">About</span> Me</h2>
+            <div class="about-content glass-panel" style="max-width: 900px; margin: 0 auto; text-align: center; padding: 60px;">
+                <div class="about-text" style="margin-left: 0;">
+                    <img src="assets/IMG_0246_2_optimized_2000.jpg" alt="Gigi Guan" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto 30px auto; display: block; filter: grayscale(20%) contrast(1.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    <p class="editorial-body" style="font-size: 1.2rem; margin-bottom: 20px;">
+                        I'm Gigi, a student at UC Berkeley studying Economics and Data Science. I am driven by a deep fascination with product strategy, data-driven insights, and human-centered design. My work isn't just about writing code; it's about deeply understanding user friction and engineering end-to-end solutions that actually matter.
+                    </p>
+                    <p class="editorial-body" style="font-size: 1.2rem; margin-bottom: 20px;">
+                        From architecting a clinical decision pipeline for community health workers to conceptualizing and building a fully functional AI video editor, I specialize in zero-to-one execution. I care about the complete lifecycle of a product: the core thesis, the business case, the aesthetic experience, and the applied logic required to bring it to life.
+                    </p>
+                    <div class="tech-stack" style="justify-content: center; margin-top: 30px;">
+                        <span class="tech-tag">Product Strategy</span>
+                        <span class="tech-tag">Rapid Prototyping</span>
+                        <span class="tech-tag">Applied AI & LLMs</span>
+                        <span class="tech-tag">UX/UI Design (Figma)</span>
+                        <span class="tech-tag">Python & Web Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Initiate <span class="italic-accent">Dialogue</span></h2>
+            <div class="contact-content">
+                <p>Always open to discussing software engineering roles, visionary AI ventures, or creative collaborations.</p>
+                <div class="contact-links">
+                    <a href="mailto:gigiguan@berkeley.edu" class="btn primary-btn">Reach Out</a>
+                    <a href="https://drive.google.com/file/d/1ehXmowagVd13Lh2pn7sWbE-czCqkYtOR/view?usp=sharing" target="_blank" class="btn secondary-btn">Resume</a>
+                    <a href="https://www.linkedin.com/in/yazhi-guan" target="_blank" class="btn secondary-btn">LinkedIn</a>
+                    <a href="https://github.com/gigi-guan" target="_blank" class="btn secondary-btn">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Gigi. Built with passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
