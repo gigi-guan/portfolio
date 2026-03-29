@@ -213,14 +213,14 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
 /* 3. Skin2Care — peach/beige */
 .project-card:nth-child(3) .project-image {
     background: linear-gradient(135deg, rgba(230,220,210, 0.8), rgba(255,240,230, 0.6));
-    padding-top: 40px;
-    align-items: center;
+    padding-top: 60px;
+    align-items: flex-start;
     justify-content: center;
 }
 .project-card:nth-child(3) .project-image img {
     height: auto; /* Constrains height so it doesn't overflow */
-    width: 42%; /* Lets the width scale naturally */
-    border-radius: 20px;
+    width: 32%; /* Lets the width scale naturally */
+    border-radius: 38px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(255, 210, 180, 0.4);
 }
 .project-card:nth-child(3) .project-info h3,
