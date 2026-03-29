@@ -219,7 +219,7 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
 }
 .project-card:nth-child(3) .project-image img {
     height: auto;
-    width: 65%;
+    width: 25%;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(255, 210, 180, 0.4);
 }
