@@ -195,10 +195,12 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
     background: linear-gradient(135deg, rgba(180, 230, 220, 0.8), rgba(220, 245, 240, 0.6));
     padding-top: 20px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 .project-card:nth-child(2) .project-image img {
     height: 92%;
+    border-radius: 20px;
+    overflow: hidden; 
     box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(80, 180, 160, 0.4);
 }
 .project-card:nth-child(2) .project-info h3,
@@ -213,10 +215,12 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
     background: linear-gradient(135deg, rgba(230,220,210, 0.8), rgba(255,240,230, 0.6));
     padding-top: 20px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 .project-card:nth-child(3) .project-image img {
     height: 92%;
+    border-radius: 20px;
+    overflow: hidden; 
     box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(255, 210, 180, 0.4);
 }
 .project-card:nth-child(3) .project-info h3,
