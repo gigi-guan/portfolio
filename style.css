@@ -109,8 +109,8 @@ html { scroll-behavior: smooth; }
 
 /* Layout variations */
 .project-card:nth-child(1) { grid-column: span 12; height: 550px; }
-.project-card:nth-child(2) { grid-column: span 6; height: 450px; }
-.project-card:nth-child(3) { grid-column: span 6; height: 450px; }
+.project-card:nth-child(2) { grid-column: span 6; height: 500px; }
+.project-card:nth-child(3) { grid-column: span 6; height: 500px; }
 
 /* Universal Floating Image Styling for Project Cards */
 .project-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; display: flex; align-items: flex-start; justify-content: center; padding-top: 50px; opacity: 1; overflow: hidden; transition: opacity 0.6s ease, transform 1s ease; }
@@ -170,6 +170,10 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
 .project-card:nth-child(1) .project-image img { height: 75%; box-shadow: 0 30px 80px rgba(0,0,0,0.8), 0 0 60px rgba(130, 90, 255, 0.2); border: 1px solid rgba(255,255,255,0.05); }
 
 /* 2. ChatCHW (Mint/Teal Clinical Glow) */
+.project-card:nth-child(2) .project-image img {
+    height: 80%;
+    object-fit: contain;
+}
 .project-card:nth-child(2) .project-image { background: linear-gradient(135deg, rgba(180, 230, 220, 0.8), rgba(220, 245, 240, 0.6)); }
 .project-card:nth-child(2) .project-image img { box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(80, 180, 160, 0.4); }
 .project-card:nth-child(2) .project-info h3, .project-card:nth-child(2) .project-info p, .project-card:nth-child(2) .project-info span { color: #111 !important; }
@@ -178,6 +182,10 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
 .project-card:nth-child(2) .project-link:hover { background: #111; color: #fff; border-color: #111; }
 
 /* 3. Skin2Care (Peach/Beige Soft Glow) */
+.project-card:nth-child(3) .project-image img {
+    height: 80%;
+    object-fit: contain;
+}
 .project-card:nth-child(3) .project-image { background: linear-gradient(135deg, rgba(230,220,210, 0.8), rgba(255,240,230, 0.6)); }
 .project-card:nth-child(3) .project-image img { box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 0 50px rgba(255, 210, 180, 0.4); }
 .project-card:nth-child(3) .project-info h3, .project-card:nth-child(3) .project-info p, .project-card:nth-child(3) .project-info span { color: #111 !important; }
