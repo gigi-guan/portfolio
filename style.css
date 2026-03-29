@@ -109,9 +109,9 @@ html { scroll-behavior: smooth; }
 .project-card:hover { border-color: rgba(255, 255, 255, 0.1); transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
 
 /* Layout variations */
-.project-card:nth-child(1) { grid-column: span 12; grid-row: span 1; height: 580px; margin-bottom: 30px; }
-.project-card:nth-child(2) { grid-column: span 6; height: 560px; }
-.project-card:nth-child(3) { grid-column: span 6; height: 560px; }
+.project-card:nth-child(1) { grid-column: 1 / -1; grid-row: 1; height: 580px; }
+.project-card:nth-child(2) { grid-column: span 6; grid-row: 2; height: 560px; }
+.project-card:nth-child(3) { grid-column: span 6; grid-row: 2; height: 560px; }
 
 /* Universal Floating Image Styling */
 .project-image {
