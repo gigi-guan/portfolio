@@ -230,6 +230,20 @@ footer { text-align: center; padding: 60px 40px; color: var(--text-muted); borde
 .project-card:nth-child(3) .project-link { color: #111; border-color: rgba(0,0,0,0.3); }
 .project-card:nth-child(3) .project-link:hover { background: #111; color: #fff; border-color: #111; }
 
+/* 4. OfferLens — sleek dark graphite (PRESERVED) */
+.project-card:nth-child(4) .project-image {
+    background: linear-gradient(135deg, rgba(20, 25, 30, 0.95), rgba(5, 10, 15, 0.95));
+    padding-top: 0px;
+    align-items: center;
+    justify-content: center;
+}
+.project-card:nth-child(4) .project-image img {
+    height: 75%;
+    width: auto;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(100, 150, 255, 0.1);
+}
+
 /* ── Lenis ── */
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
