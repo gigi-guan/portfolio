@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OfferLens - Case Study</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <style>
+        /* Specific Typography overrides for OfferLens case study */
+        .offerlens-heading {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .offerlens-mono {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.9em;
+            letter-spacing: -0.5px;
+            color: #b0c4de;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo">Gigi.</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home"><span>I.</span> Home</a></li>
+            <li><a href="index.html#projects"><span>II.</span> Projects</a></li>
+            <li><a href="index.html#about"><span>III.</span> About</a></li>
+        </ul>
+    </nav>
+
+    <main style="padding-top: 25vh; max-width: 1200px; margin: 0 auto; min-height: 100vh; padding-bottom: 100px; padding-left: 40px; padding-right: 40px;">
+        
+        <!-- Intro -->
+        <section class="case-study-hero" style="text-align: center; margin-bottom: 120px;">
+            <p class="offerlens-mono" style="margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;">Case Study</p>
+            <h1 class="hero-title offerlens-heading" style="font-size: 6vw; margin-bottom: 20px; font-weight: 600;">Offer<span class="italic-accent">Lens</span></h1>
+            <h3 class="offerlens-heading" style="font-size: 2rem; margin-bottom: 30px; color: var(--text-main); font-weight: 400; font-style: italic;">See the full picture before you sign.</h3>
+            
+            <p class="hero-subtitle" style="margin: 0 auto; max-width: 800px; font-size: 1.25rem;">
+                AI-powered job offer comparison for early-career decisions.
+            </p>
+            <div style="margin-top: 40px; display: flex; justify-content: center; gap: 20px;">
+                <a href="https://offerlensdemo.vercel.app/" target="_blank" class="btn primary-btn">Live Demo &rarr;</a>
+            </div>
+        </section>
+
+        <!-- 1. The Core Problem & Purchasing Power -->
+        <section class="demo-section project-card" style="margin-bottom: 60px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title offerlens-heading" style="font-size: 3.5rem; text-align: left; margin-bottom: 20px; line-height: 1.1">True <span class="italic-accent">Purchasing</span> Power</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                        You spent four years in school to land an offer. Most people open a spreadsheet, copy in the numbers, and stare at it. The problem is that nominal salary is a lie. $150K in San Francisco after taxes and rent is materially worse than $120K in Austin. Nobody tells you this clearly, and nobody builds the tool that shows it to you.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">
+                        I built a cost-of-living adjustment layer utilizing a composite COL index across 18 major cities combined with estimated effective marginal tax rates by state. The output isn't "your salary is $150K". It's "your actual spending power is equivalent to $87K nationally." This was the most important decision in the product because it reframes the entire comparison.
+                    </p>
+                </div>
+                <div style="flex: 1.2; min-width: 300px; background: rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: center; position: relative; padding: 20px;">
+                    <img src="assets/offerlens_home.png" alt="OfferLens Home Dashboard" style="width: 100%; height: auto; object-fit: contain; border-radius: 12px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Equity NPV -->
+        <section class="demo-section project-card" style="margin-bottom: 60px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap; flex-direction: row-reverse;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title offerlens-heading" style="font-size: 3.5rem; text-align: left; margin-bottom: 20px; line-height: 1.1">Equity <span class="italic-accent">NPV</span> Modeling</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                        A $200K equity grant over 4 years looks the same whether it is at a Series A startup or a public company. It isn't. I built an equity NPV calculator using a 12% discount rate (the standard venture-adjusted rate), modeling a 1-year cliff with monthly vesting thereafter. 
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">
+                        This surfaces the time value of equity in a way raw grant numbers never do. I also made the company stage a first-class input, not just because the tool adjusts numbers for it, but because it feeds the AI analysis layer with critical context regarding risk.
+                    </p>
+                </div>
+                <div style="flex: 1.5; min-width: 300px; background: rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: center; position: relative; padding: 20px;">
+                    <img src="assets/offerlens_2.png" alt="Equity NPV Calculator" style="width: 100%; height: auto; object-fit: contain; border-radius: 12px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. AI Layer -->
+        <section class="demo-section project-card" style="margin-bottom: 120px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title offerlens-heading" style="font-size: 3.5rem; text-align: left; margin-bottom: 20px; line-height: 1.1">The Non-Obvious <span class="italic-accent">AI</span> Read</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                        The numbers tell you <em>what</em>. The AI tells you <em>so what</em>. After computing the adjusted figures, the tool passes a structured prompt to Claude that asks for specific, non-generic insights about the user's particular offers. The design requires no login and stores no data, which lowers the trust barrier for purely ephemeral analysis.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">
+                        The prompt explicitly prohibits repeating numbers verbatim and pushes for the kind of blunt read a sharp mentor would give you. The winner recommendation is intentionally binary with a one-sentence rationale. No hedging, and no "it depends." If it is genuinely close, it says so.
+                    </p>
+                </div>
+                <div style="flex: 1.5; min-width: 300px; background: rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: center; position: relative; padding: 20px;">
+                    <img src="assets/offerlens_3.png" alt="AI Insights Card" style="width: 100%; height: auto; object-fit: contain; border-radius: 12px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Row -->
+        <div style="text-align: center; padding: 30px; background: var(--bg-elevated); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 100px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <p style="font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin: 0;">
+                React &middot; Vite &middot; Anthropic Claude API &middot; Vercel &middot; Financial Modeling &middot; Product Strategy
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Gigi. Built with passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
