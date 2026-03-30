@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. SplitType for Text Reveal on Scroll
     gsap.registerPlugin(ScrollTrigger);
     
-    const splitTitles = new SplitType('.section-title', { types: 'chars' });
+    const splitTitles = new SplitType('.section-title', { types: 'words, chars' });
     splitTitles.chars.forEach((char) => {
         gsap.from(char, {
             scrollTrigger: {
