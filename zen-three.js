@@ -258,6 +258,31 @@ class KaresansuiScene {
     return visibleH * this.camera.aspect * 0.42;
   }
 
+  getKoiYRange() {
+    const koiZ = 0.65;
+    const dist = Math.max(this.camera.position.z - koiZ, 0.5);
+    const vFov = (this.camera.fov * Math.PI) / 180;
+    const visibleH = 2 * Math.tan(vFov / 2) * dist;
+    return visibleH * 0.24;
+  }
+
+  updateKoiTargetFromPointer(clientX, clientY) {
+    if (!this.koi) return;
+
+    const px = THREE.MathUtils.clamp(clientX / window.innerWidth, 0, 1);
+    const py = THREE.MathUtils.clamp(clientY / window.innerHeight, 0, 1);
+    const xRange = this.koi.def.xRange * 1.55;
+    const yRange = this.getKoiYRange();
+
+    this.koiTarget.x = THREE.MathUtils.lerp(-xRange, xRange, px);
+    this.koiTarget.y = THREE.MathUtils.lerp(
+      this.koi.def.baseY + yRange,
+      this.koi.def.baseY - yRange,
+      py
+    );
+    this.koiTarget.z = this.koi.def.z;
+  }
+
   loadSkyVideo() {
     const video = document.createElement('video');
     video.src = VIDEO_SRC;
@@ -317,7 +342,8 @@ class KaresansuiScene {
         cycleDuration: 14,
         xRange: this.getKoiXRange(),
         yWobble: 0.028,
-        basePlaybackRate: 0.5
+        basePlaybackRate: 0.5,
+        chaseSpeed: 3.8
       };
 
       const mat = new THREE.ShaderMaterial({
@@ -342,6 +368,7 @@ class KaresansuiScene {
       );
       mesh.rotation.x = -0.2;
       mesh.renderOrder = 20;
+      mesh.position.set(0, def.baseY, def.z);
       this.scene.add(mesh);
 
       this.koiTarget.set(0, def.baseY, def.z);
@@ -368,31 +395,37 @@ class KaresansuiScene {
     if (this.koiVideoTex) this.koiVideoTex.needsUpdate = true;
 
     const { mesh, def } = this.koi;
-    const boost = this.isRaking ? 1.3 : 1;
+    const boost = this.isRaking ? 1.2 : 1;
     this.koi.travel += dt * boost;
 
-    const idleX = Math.sin(this.koi.travel * 0.32) * def.xRange * 0.22;
-    const idleY = def.baseY
-      + Math.sin(this.koi.travel * 0.5) * def.yWobble
-      + Math.cos(this.koi.travel * 0.33) * def.yWobble * 0.4;
-    const pointerBlend = 0.96;
+    const wobbleY =
+      Math.sin(this.koi.travel * 0.9) * def.yWobble * 0.04 +
+      Math.cos(this.koi.travel * 0.5) * def.yWobble * 0.02;
+
+    const liveXRange = def.xRange * 2.1;
+    const liveYRange = this.getKoiYRange() * 1.15;
     const desired = new THREE.Vector3(
-      THREE.MathUtils.lerp(idleX, this.koiTarget.x, pointerBlend),
-      THREE.MathUtils.lerp(idleY, this.koiTarget.y, pointerBlend),
+      THREE.MathUtils.clamp(this.mouse.x * liveXRange, -liveXRange, liveXRange),
+      THREE.MathUtils.clamp(
+        def.baseY + this.mouse.y * liveYRange + wobbleY,
+        def.baseY - liveYRange,
+        def.baseY + liveYRange
+      ),
       def.z
     );
 
+    const previousPosition = mesh.position.clone();
+    mesh.position.x = desired.x;
+    mesh.position.y = desired.y;
+    mesh.position.z = desired.z;
     const distanceToTarget = mesh.position.distanceTo(desired);
-
-    const steer = desired.clone().sub(mesh.position).multiplyScalar(4.2 * dt);
-    this.koi.velocity.add(steer);
-    this.koi.velocity.multiplyScalar(0.9);
-    mesh.position.add(this.koi.velocity);
+    this.koi.velocity.copy(mesh.position).sub(previousPosition);
 
     const driftX = this.koi.velocity.x;
-    this.koi.heading = driftX >= 0 ? 1 : -1;
-    mesh.rotation.z = THREE.MathUtils.clamp(driftX * 0.08, -0.18, 0.18)
-      + Math.sin(this.koi.travel * 0.6) * 0.01;
+    if (Math.abs(driftX) > 0.0004) {
+      this.koi.heading = driftX >= 0 ? 1 : -1;
+    }
+    mesh.rotation.z = THREE.MathUtils.clamp(driftX * 0.28, -0.34, 0.34);
     mesh.scale.x = this.koi.heading;
     mesh.scale.y = 1;
 
@@ -478,12 +511,8 @@ class KaresansuiScene {
     const onMove = (e) => {
       this.mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
       this.mouse.y = -(e.clientY / window.innerHeight - 0.5) * 2;
+      this.updateKoiTargetFromPointer(e.clientX, e.clientY);
       const hit = this.intersectSand(e.clientX, e.clientY);
-      if (hit && this.koi) {
-        this.koiTarget.x = THREE.MathUtils.clamp(hit.point.x, -this.koi.def.xRange, this.koi.def.xRange);
-        this.koiTarget.y = THREE.MathUtils.clamp(hit.point.y + 0.08, this.koi.def.baseY - 0.12, this.koi.def.baseY + 0.12);
-        this.koiTarget.z = this.koi.def.z;
-      }
       const uv = hit?.uv || null;
       if (this.isRaking) {
         this.rakeAt(uv, 1);
@@ -494,12 +523,14 @@ class KaresansuiScene {
       this.isRaking = true;
       this.lastRakeUv = null;
       this.renderer.domElement.setPointerCapture(e.pointerId);
+      this.updateKoiTargetFromPointer(e.clientX, e.clientY);
       const uv = this.uvFromEvent(e.clientX, e.clientY);
       this.rakeAt(uv, 0.8);
       document.body.classList.add('is-raking');
     });
 
-    this.renderer.domElement.addEventListener('pointermove', onMove);
+    window.addEventListener('pointermove', onMove, { passive: true });
+    window.addEventListener('mousemove', onMove, { passive: true });
 
     const endRake = () => {
       this.isRaking = false;
@@ -507,8 +538,8 @@ class KaresansuiScene {
       document.body.classList.remove('is-raking');
     };
 
-    this.renderer.domElement.addEventListener('pointerup', endRake);
-    this.renderer.domElement.addEventListener('pointercancel', endRake);
+    window.addEventListener('pointerup', endRake);
+    window.addEventListener('pointercancel', endRake);
   }
 
   resize() {
@@ -537,18 +568,18 @@ class KaresansuiScene {
     if (this.sandMat) this.sandMat.uniforms.uTime.value = t;
 
     const sp = this.scrollProgress;
-    const camX = this.mouse.x * 0.08 + Math.sin(sp * Math.PI * 2) * 0.25;
-    const camY = this.baseCameraPos.y - sp * 0.55 + this.mouse.y * 0.04;
+    const camX = Math.sin(sp * Math.PI * 2) * 0.25;
+    const camY = this.baseCameraPos.y - sp * 0.55;
     const camZ = this.baseCameraPos.z - sp * 0.4;
     this.camera.position.set(camX, camY, camZ);
     this.camera.lookAt(
-      this.baseCameraLook.x + camX * 0.3,
+      this.baseCameraLook.x,
       this.baseCameraLook.y - sp * 0.35,
       this.baseCameraLook.z
     );
 
     if (this.sand) {
-      this.sand.position.x = 0.15 + this.mouse.x * 0.04;
+      this.sand.position.x = 0.15;
       this.sand.position.y = -0.55 - sp * 0.15;
     }
 
