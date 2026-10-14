@@ -55,6 +55,31 @@ document.addEventListener('DOMContentLoaded', () => {
             delay: 1.4,
             ease: 'power3.out'
         });
+
+        // Case-study pages: fade remaining hero copy after the title/subtitle beat.
+        if (document.querySelector('.case-study-main')) {
+            gsap.from('.case-study-lede, .case-study-role, .case-study-hero .case-ctas', {
+                y: 18,
+                opacity: 0,
+                duration: 0.9,
+                delay: 1.05,
+                stagger: 0.08,
+                ease: 'power3.out'
+            });
+
+            gsap.utils.toArray('.case-heading').forEach((heading) => {
+                gsap.from(heading, {
+                    scrollTrigger: {
+                        trigger: heading,
+                        start: 'top 88%',
+                    },
+                    y: 28,
+                    opacity: 0,
+                    duration: 0.75,
+                    ease: 'power3.out'
+                });
+            });
+        }
     }
 
     const rakeHint = document.getElementById('rake-hint');
