@@ -404,9 +404,30 @@ body.garden-active .ambient-vignette {
     color: #111;
 }
 
+.stone-card:nth-child(5) .project-link:hover {
+    color: var(--accent);
+}
+
 .stone-card:nth-child(5) .tech-tag {
     border-color: rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 0.24);
+}
+
+/* Keep case-study hero sizing when sharing homepage animation classes */
+.case-study-hero .hero-title.case-study-title {
+    font-size: clamp(3rem, 6vw, 4.8rem);
+    line-height: 1.05;
+    max-width: none;
+}
+
+.case-study-hero .hero-subtitle.case-study-subtitle {
+    max-width: 640px;
+    margin: 0 auto 28px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+    color: var(--text-main);
+    line-height: 1.5;
 }
 
 /* Case study pages */
