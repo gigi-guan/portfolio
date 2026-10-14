@@ -888,12 +888,13 @@ html.lenis { height: auto; }
 .lenis.lenis-stopped { overflow: hidden; }
 .lenis.lenis-scrolling iframe { pointer-events: none; }
 
-body,
-a,
-button,
-.btn,
-.project-card,
-[role="button"] {
+/* Only hide the native cursor when the custom cursor system is mounted */
+body:has(.cursor-system),
+body:has(.cursor-system) a,
+body:has(.cursor-system) button,
+body:has(.cursor-system) .btn,
+body:has(.cursor-system) .project-card,
+body:has(.cursor-system) [role="button"] {
     cursor: none;
 }
 

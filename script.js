@@ -226,6 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rippleLayer = document.querySelector('.cursor-ripple-layer');
 
     if (cursorSystem && cursorDot && cursorRing && cursorBloom && rippleLayer && !prefersReducedMotion.matches) {
+        document.body.classList.add('has-custom-cursor');
         const state = {
             x: window.innerWidth / 2,
             y: window.innerHeight / 2,
