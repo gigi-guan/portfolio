@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatCHW - Case Study</title>
+    <title>ChatCHW — Building Reliable Clinical Decision Support</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
@@ -23,7 +23,7 @@
     <div class="cursor-follower"></div>
 
     <nav class="glass-nav">
-        <div class="logo">Gigi.</div>
+        <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">Gigi.</a></div>
         <ul class="nav-links">
             <li><a href="index.html#home"><span>I.</span> Home</a></li>
             <li><a href="index.html#projects"><span>II.</span> Projects</a></li>
@@ -31,61 +31,132 @@
         </ul>
     </nav>
 
-    <main style="padding-top: 25vh; max-width: 1200px; margin: 0 auto; min-height: 100vh; padding-bottom: 100px; padding-left: 40px; padding-right: 40px;">
+    <main class="case-study-main">
 
-        <!-- Hero -->
-        <section style="text-align: center; margin-bottom: 120px;">
-            <h1 class="editorial-title" style="font-size: 6vw; margin-bottom: 30px;">Chat<span class="italic-accent">CHW</span></h1>
-            <p style="margin: 0 auto; max-width: 800px; font-size: 1.25rem; color: var(--text-muted); line-height: 1.8;">
-                In sub-Saharan Africa and South Asia, there aren't enough doctors. Community health workers fill the gap, but they need reliable clinical guidance at the point of care. ChatCHW is a decision support system that tells a CHW in Chad or Kenya exactly what to do when a child presents with a fever. I built the frontend interface and led the testing infrastructure ensuring that logic is correct before it reaches the field. Because in this context, a wrong answer isn't a bug. It's a life.
+        <section class="case-study-hero">
+            <p class="section-label">Case Study · AI Evaluation / Healthcare</p>
+            <h1 class="editorial-title case-study-title">Chat<span class="italic-accent">CHW</span></h1>
+            <p class="case-study-subtitle">Building Reliable Clinical Decision Support</p>
+            <p class="case-study-lede">
+                Led the validation of an AI-assisted clinical decision-support system, developing cross-engine testing and evaluation methods to uncover hidden logic failures across 1,000+ simulated patient cases.
             </p>
+            <p class="case-study-role">Project Team Lead · UC Berkeley Haas School of Business</p>
+            <div class="case-ctas project-links">
+                <a href="https://www.figma.com/proto/IJSZZeDvlD0N1ZTTheoeWU/ChatCHW-Interface?node-id=1-3320&t=M04LPM3V13RljwBh-1" target="_blank" rel="noopener" class="btn primary-btn">Figma Prototype</a>
+                <a href="https://chwdemo.vercel.app/" target="_blank" rel="noopener" class="btn secondary-btn">HTML Demo</a>
+            </div>
         </section>
 
-        <!-- 1. Figma Prototype -->
-        <section class="project-card" style="margin-bottom: 60px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
-            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 280px;">
-                    <h2 class="section-title" style="font-size: 3rem; text-align: left; margin-bottom: 20px;">Figma <span class="italic-accent">Prototype</span></h2>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">High-fidelity interactive prototype mapping out the precise flow for community health workers to log diagnostics.</p>
-                    <a href="https://www.figma.com/proto/IJSZZeDvlD0N1ZTTheoeWU/ChatCHW-Interface?node-id=1-3320&t=M04LPM3V13RljwBh-1" target="_blank" class="btn primary-btn">View Figma Prototype &rarr;</a>
+        <section class="case-study-panel project-card">
+            <div class="case-study-split">
+                <div class="case-study-copy">
+                    <h2 class="section-title case-heading">The <span class="italic-accent">Challenge</span></h2>
+                    <p>
+                        Reliable clinical guidance requires more than agreement among generated decision systems. Community health workers need dependable support at the point of care — but consistency across JSON, DMN, and XLSForm implementations can mask untested rules, converter defects, and misleading performance scores.
+                    </p>
+                    <p>
+                        The work centered on building evaluation methods that make those failures visible before logic reaches the field.
+                    </p>
                 </div>
-                <!-- Phone mockup: constrained by width, no black container, clean rounded corners -->
-                <div style="flex: 1; min-width: 280px; display: flex; align-items: center; justify-content: center; padding: 20px 0;">
-                    <img
-                        src="assets/chatchw_figmascreen.png"
-                        alt="Figma Prototype"
-                        style="width: 50%; height: auto; border-radius: 24px; box-shadow: 0 30px 80px rgba(0,0,0,0.5); display: block;"
-                    >
+                <div class="case-study-media">
+                    <img src="assets/chw_navigator_home.png" alt="ChatCHW clinical decision pipeline interface">
                 </div>
             </div>
         </section>
 
-        <!-- 2. HTML Demo -->
-        <section class="project-card" style="margin-bottom: 120px; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
-            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap; flex-direction: row-reverse;">
-                <div style="flex: 1; min-width: 280px;">
-                    <h2 class="section-title" style="font-size: 3rem; text-align: left; margin-bottom: 20px;">Live HTML <span class="italic-accent">Demo</span></h2>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">Fully functional HTML/CSS implementation of the patient diagnostic intake interface, capturing key demographics and routing logic.</p>
-                    <a href="https://chwdemo.vercel.app/" target="_blank" class="btn primary-btn">View App Demo &rarr;</a>
+        <section class="case-study-panel project-card">
+            <div class="case-study-split reverse">
+                <div class="case-study-copy">
+                    <h2 class="section-title case-heading">My <span class="italic-accent">Role</span></h2>
+                    <p>
+                        Project Team Lead at UC Berkeley Haas. I led validation strategy and coordinated two intern workstreams focused on simulation, testing, and evaluation infrastructure.
+                    </p>
                 </div>
-                <!-- Desktop screenshot: full width, no black container, clean corners -->
-                <div style="flex: 1.5; min-width: 280px; display: flex; align-items: center; justify-content: center; padding: 20px 0;">
-                    <img
-                        src="assets/chatchw_demoscreen.png"
-                        alt="HTML Demo"
-                        style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 30px 80px rgba(0,0,0,0.5); display: block;"
-                    >
+                <div class="case-study-media">
+                    <img src="assets/chw_navigator_harness.png" alt="Cross-engine differential harness showing predicate and output agreement">
                 </div>
             </div>
         </section>
 
-        <!-- Skills Row -->
-        <div style="text-align: center; padding: 30px; background: var(--bg-elevated); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 100px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <p style="font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin: 0;">
-                Python &middot; Docker &middot; CHT &middot; XLSForms &middot; Figma &middot; HTML/CSS/JS
+        <section class="case-study-panel project-card">
+            <div class="case-study-split">
+                <div class="case-study-copy">
+                    <h2 class="section-title case-heading">What I <span class="italic-accent">Built</span></h2>
+                    <ul class="case-list">
+                        <li>Cross-engine testing across JSON, DMN, and XLSForm representations</li>
+                        <li>Simulated patient evaluation across 1,000+ cases</li>
+                        <li>Defect investigation for converter and evaluator failures</li>
+                        <li>Reproducible regression testing workflows</li>
+                        <li>Transparent reporting metrics, including rule coverage alongside agreement</li>
+                    </ul>
+                </div>
+                <div class="case-study-media">
+                    <img src="assets/chw_navigator_benchmark.png" alt="Clinical benchmark grading referral decisions against WHO 2011 answer key">
+                </div>
+            </div>
+        </section>
+
+        <section class="case-study-panel project-card">
+            <h2 class="section-title case-heading">The Key <span class="italic-accent">Decision</span></h2>
+            <p class="case-study-copy-block">
+                We distinguished apparent agreement from meaningful comparisons and independently verified correctness. Engine-to-engine consistency is a reliability signal — not proof that the underlying clinical logic is right.
             </p>
+            <p class="case-study-copy-block">
+                That framing exposed misleading performance metrics: high agreement can coexist with unexercised rules, ungradeable patients, and defects that only appear under structured evaluation.
+            </p>
+            <p class="case-note">
+                This case study does not claim the system is clinically validated or that independent clinical accuracy has been established. An authoritative clinical oracle remains necessary for that determination.
+            </p>
+        </section>
+
+        <section class="case-study-panel project-card case-study-results">
+            <h2 class="section-title case-heading">Results and <span class="italic-accent">Impact</span></h2>
+            <div class="highlight-grid">
+                <div class="highlight-item">
+                    <span class="highlight-value">1,000+</span>
+                    <span class="highlight-label">Simulated patient cases</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-value">3</span>
+                    <span class="highlight-label">System representations: JSON, DMN, XLSForm</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-value">2</span>
+                    <span class="highlight-label">Intern workstreams coordinated</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-value">Stakeholders</span>
+                    <span class="highlight-label">Findings contributed to presentations involving WHO, UNICEF, and Community Health Toolkit</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-study-panel project-card">
+            <h2 class="section-title case-heading">Interface <span class="italic-accent">prototypes</span></h2>
+            <p class="case-study-copy-block">
+                Complementary product artifacts for community health worker intake flows:
+            </p>
+            <div class="project-links case-ctas" style="justify-content: flex-start;">
+                <a href="https://www.figma.com/proto/IJSZZeDvlD0N1ZTTheoeWU/ChatCHW-Interface?node-id=1-3320&t=M04LPM3V13RljwBh-1" target="_blank" rel="noopener" class="project-link">Figma Prototype</a>
+                <a href="https://chwdemo.vercel.app/" target="_blank" rel="noopener" class="project-link">HTML Demo</a>
+            </div>
+            <div class="case-study-split" style="margin-top: 36px;">
+                <div class="case-study-media">
+                    <img src="assets/chatchw_figmascreen.png" alt="ChatCHW Figma prototype">
+                </div>
+                <div class="case-study-media">
+                    <img src="assets/chatchw_demoscreen.png" alt="ChatCHW HTML demo">
+                </div>
+            </div>
+        </section>
+
+        <div class="case-stack-bar">
+            <p>AI Evaluation · Python · Product Validation · Clinical Decision Support · Automated Testing · DMN · XLSForm</p>
         </div>
 
+        <div class="case-back">
+            <a href="index.html#projects" class="btn secondary-btn">← Back to Projects</a>
+        </div>
     </main>
 
     <footer>

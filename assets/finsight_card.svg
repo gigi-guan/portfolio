@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="FinSight">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1412"/>
+      <stop offset="55%" stop-color="#111a17"/>
+      <stop offset="100%" stop-color="#0a100e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7db89a"/>
+      <stop offset="100%" stop-color="#c4d4a8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#7db89a" stroke-width="1">
+    <path d="M80 520 C220 420, 340 560, 480 470 C620 380, 740 430, 880 360 C980 310, 1060 280, 1120 240" fill="none"/>
+    <path d="M80 580 C240 500, 360 620, 520 540 C680 460, 800 510, 940 450 C1040 410, 1100 390, 1120 380" fill="none"/>
+  </g>
+  <rect x="72" y="72" width="180" height="6" rx="3" fill="url(#accent)"/>
+  <text x="72" y="160" fill="#ede8e0" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-style="italic">FinSight</text>
+  <text x="72" y="220" fill="#8f8a82" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="4">PERSONAL FINANCIAL INTELLIGENCE</text>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="2" fill="#c4d4a8">
+    <text x="72" y="320">ANALYTICS</text>
+    <text x="260" y="320">CSV INGESTION</text>
+    <text x="480" y="320">RECURRING DETECTION</text>
+    <text x="760" y="320">OFFLINE ML</text>
+  </g>
+  <rect x="72" y="360" width="1056" height="1" fill="rgba(255,255,255,0.08)"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#8f8a82" font-size="18">
+    <text x="72" y="430">Next.js · FastAPI · PostgreSQL · scikit-learn</text>
+    <text x="72" y="470">Merchant-grouped evaluation · human-in-the-loop categories</text>
+  </g>
+</svg>

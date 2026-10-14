@@ -19,40 +19,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    new SplitType('.hero-title', { types: 'chars' });
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        new SplitType(heroTitle, { types: 'chars' });
 
-    gsap.from('.hero-eyebrow', {
-        y: 12,
-        opacity: 0,
-        duration: 0.8,
-        delay: 0.1,
-        ease: 'power3.out'
-    });
+        gsap.from('.hero-eyebrow', {
+            y: 12,
+            opacity: 0,
+            duration: 0.8,
+            delay: 0.1,
+            ease: 'power3.out'
+        });
 
-    gsap.from('.hero-title .char', {
-        y: 100,
-        opacity: 0,
-        duration: 1.5,
-        stagger: 0.05,
-        delay: 0.2,
-        ease: 'power4.out'
-    });
+        gsap.from('.hero-title .char', {
+            y: 100,
+            opacity: 0,
+            duration: 1.5,
+            stagger: 0.05,
+            delay: 0.2,
+            ease: 'power4.out'
+        });
 
-    gsap.from('.hero-subtitle', {
-        y: 20,
-        opacity: 0,
-        duration: 1,
-        delay: 0.8,
-        ease: 'power3.out'
-    });
+        gsap.from('.hero-subtitle', {
+            y: 20,
+            opacity: 0,
+            duration: 1,
+            delay: 0.8,
+            ease: 'power3.out'
+        });
 
-    gsap.from('.rake-hint', {
-        y: 16,
-        opacity: 0,
-        duration: 0.9,
-        delay: 1.4,
-        ease: 'power3.out'
-    });
+        gsap.from('.rake-hint', {
+            y: 16,
+            opacity: 0,
+            duration: 0.9,
+            delay: 1.4,
+            ease: 'power3.out'
+        });
+    }
 
     const rakeHint = document.getElementById('rake-hint');
     const zenRoot = document.getElementById('zen-three-root');
