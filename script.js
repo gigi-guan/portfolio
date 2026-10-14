@@ -66,19 +66,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initScrollAnimations() {
-        const splitTitles = new SplitType('.section-title', { types: 'words, chars' });
-        splitTitles.chars.forEach((char) => {
-            gsap.from(char, {
-                scrollTrigger: {
-                    trigger: char.parentElement,
-                    start: 'top 86%',
-                },
-                y: 36,
-                opacity: 0,
-                duration: 0.7,
-                ease: 'power3.out'
+        // Homepage titles only — case-study headings stay intact for readable spacing.
+        const homepageTitles = document.querySelectorAll(
+            '.stone-path-section .section-title, .pavilion .section-title'
+        );
+        if (homepageTitles.length) {
+            const splitTitles = new SplitType(homepageTitles, { types: 'words, chars' });
+            splitTitles.chars.forEach((char) => {
+                gsap.from(char, {
+                    scrollTrigger: {
+                        trigger: char.parentElement,
+                        start: 'top 86%',
+                    },
+                    y: 36,
+                    opacity: 0,
+                    duration: 0.7,
+                    ease: 'power3.out'
+                });
             });
-        });
+        }
 
         gsap.from('.section-intro', {
             scrollTrigger: { trigger: '.stone-path-section', start: 'top 82%' },

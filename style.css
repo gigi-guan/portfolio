@@ -411,41 +411,44 @@ body.garden-active .ambient-vignette {
 
 /* Case study pages */
 .case-study-main {
-    padding: 22vh 40px 100px;
-    max-width: 1200px;
+    padding: 18vh 40px 100px;
+    max-width: 920px;
     margin: 0 auto;
     min-height: 100vh;
 }
 
 .case-study-hero {
     text-align: center;
-    margin-bottom: 88px;
+    margin-bottom: 64px;
 }
 
 .case-study-title {
-    font-size: clamp(3.2rem, 7vw, 6rem);
-    margin: 18px 0 22px;
+    font-size: clamp(3rem, 6vw, 4.8rem);
+    margin: 16px 0 18px;
+    line-height: 1.05;
 }
 
 .case-study-subtitle {
-    max-width: 720px;
-    margin: 0 auto 24px;
+    max-width: 640px;
+    margin: 0 auto 28px;
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
     color: var(--text-main);
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 .case-study-lede {
-    max-width: 820px;
-    margin: 0 auto 20px;
-    font-size: 1.08rem;
+    max-width: 680px;
+    margin: 0 auto 24px;
+    font-size: 1.05rem;
     color: var(--text-muted);
-    line-height: 1.8;
+    line-height: 1.85;
 }
 
 .case-study-role {
+    display: block;
+    margin-top: 8px;
     font-size: 0.78rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -455,69 +458,101 @@ body.garden-active .ambient-vignette {
 
 .case-study-panel {
     display: block;
-    margin-bottom: 48px;
-    padding: 42px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    margin-bottom: 36px;
+    padding: 36px 36px 32px;
+    background: linear-gradient(180deg, rgba(12, 15, 18, 0.52), rgba(12, 15, 18, 0.28));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
 
 .case-heading {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-family: var(--font-serif);
+    font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
     text-align: left;
-    margin-bottom: 20px;
-    line-height: 1.1;
+    margin: 0 0 18px;
+    line-height: 1.2;
+    color: var(--text-main);
 }
 
 .case-study-split {
-    display: flex;
-    gap: 48px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.case-study-split.reverse {
-    flex-direction: row-reverse;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
 }
 
 .case-study-copy {
-    flex: 1;
-    min-width: 280px;
+    min-width: 0;
+}
+
+.case-study-copy > *:first-child {
+    margin-top: 0;
 }
 
 .case-study-copy p,
 .case-study-copy-block {
     color: var(--text-muted);
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     line-height: 1.8;
-    margin-bottom: 18px;
+    margin: 0 0 16px;
+}
+
+.case-study-copy p:last-child,
+.case-study-copy-block:last-child {
+    margin-bottom: 0;
 }
 
 .case-study-media {
-    flex: 1.35;
-    min-width: 280px;
-    background: rgba(0, 0, 0, 0.45);
-    border-radius: 16px;
+    width: 100%;
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 14px;
+    padding: 12px;
 }
 
 .case-study-media img {
     width: 100%;
+    max-width: 100%;
+    max-height: 340px;
     height: auto;
     display: block;
-    border-radius: 10px;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: top center;
+    border-radius: 8px;
+}
+
+.case-study-media.case-media-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.case-study-media.case-media-pair img {
+    max-height: 280px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px;
 }
 
 .case-list {
-    margin: 12px 0 0;
+    margin: 4px 0 0;
     padding-left: 1.15rem;
     color: var(--text-muted);
-    font-size: 1.02rem;
+    font-size: 1rem;
     line-height: 1.75;
 }
 
 .case-list li + li {
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .case-list-wide {
@@ -527,12 +562,12 @@ body.garden-active .ambient-vignette {
 .highlight-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-    margin: 28px 0 24px;
+    gap: 16px;
+    margin: 8px 0 0;
 }
 
 .highlight-item {
-    padding: 22px 20px;
+    padding: 18px 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.02);
@@ -541,16 +576,17 @@ body.garden-active .ambient-vignette {
 .highlight-value {
     display: block;
     font-family: var(--font-serif);
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-size: clamp(1.45rem, 2.6vw, 1.9rem);
     font-style: italic;
     color: var(--text-main);
     margin-bottom: 8px;
+    line-height: 1.2;
 }
 
 .highlight-label {
     display: block;
     color: var(--text-muted);
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     line-height: 1.55;
 }
 
@@ -560,6 +596,7 @@ body.garden-active .ambient-vignette {
     line-height: 1.7;
     border-left: 2px solid var(--line-accent);
     padding-left: 16px;
+    margin-top: 8px;
 }
 
 .case-ctas {
@@ -570,20 +607,20 @@ body.garden-active .ambient-vignette {
 
 .case-stack-bar {
     text-align: center;
-    padding: 28px;
-    margin-top: 24px;
+    padding: 22px 24px;
+    margin-top: 20px;
     background: var(--bg-elevated);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 100px;
+    border-radius: 24px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .case-stack-bar p {
     font-family: var(--font-sans);
-    font-size: 0.88rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
     margin: 0;
@@ -595,16 +632,34 @@ body.garden-active .ambient-vignette {
     flex-wrap: wrap;
     gap: 14px;
     justify-content: center;
-    margin-top: 48px;
+    margin-top: 40px;
 }
 
 @media (max-width: 1024px) {
     .case-study-main {
-        padding: 18vh 24px 80px;
+        padding: 16vh 22px 80px;
+        max-width: 100%;
     }
 
     .case-study-panel {
-        padding: 28px 22px;
+        padding: 26px 20px 22px;
+        margin-bottom: 28px;
+    }
+
+    .case-study-split {
+        gap: 22px;
+    }
+
+    .case-study-media img {
+        max-height: 260px;
+    }
+
+    .case-study-media.case-media-pair {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-media.case-media-pair img {
+        max-height: 240px;
     }
 
     .highlight-grid {
@@ -612,8 +667,8 @@ body.garden-active .ambient-vignette {
     }
 
     .case-stack-bar {
-        border-radius: 24px;
-        padding: 22px 18px;
+        border-radius: 20px;
+        padding: 18px 16px;
     }
 }
 
