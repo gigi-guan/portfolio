@@ -47,44 +47,72 @@
         </section>
 
         <section class="case-study-panel project-card">
-            <h2 class="section-title case-heading">The <span class="italic-accent">Problem</span></h2>
-            <p class="case-study-copy-block">
-                Transform fragmented transaction histories into useful spending and cash-flow insights — without silent import failures, opaque categories, or ML claims that look strong only under the wrong evaluation setup.
-            </p>
+            <div class="case-study-split">
+                <div class="case-study-copy">
+                    <h2 class="section-title case-heading">The <span class="italic-accent">Problem</span></h2>
+                    <p>
+                        Transform fragmented transaction histories into useful spending and cash-flow insights — without silent import failures, opaque categories, or ML claims that look strong only under the wrong evaluation setup.
+                    </p>
+                </div>
+                <div class="case-study-media">
+                    <img src="assets/finsight_dashboard.png" alt="FinSight dashboard with monthly cash-flow summary">
+                </div>
+            </div>
         </section>
 
         <section class="case-study-panel project-card">
-            <h2 class="section-title case-heading">What I <span class="italic-accent">Built</span></h2>
-            <ul class="case-list case-list-wide">
-                <li>Next.js + TypeScript frontend</li>
-                <li>FastAPI backend</li>
-                <li>PostgreSQL database with SQLAlchemy</li>
-                <li>Accounts and transactions with decimal-safe money handling</li>
-                <li>CSV ingestion with validation, partial success, and deduplication</li>
-                <li>SQL-side financial analytics (income, spending, MoM, category/merchant breakdowns)</li>
-                <li>Category review and correction with explicit provenance</li>
-                <li>Calendar-aware recurring-payment detection</li>
-            </ul>
+            <div class="case-study-split reverse">
+                <div class="case-study-copy">
+                    <h2 class="section-title case-heading">What I <span class="italic-accent">Built</span></h2>
+                    <ul class="case-list">
+                        <li>Next.js + TypeScript frontend</li>
+                        <li>FastAPI backend</li>
+                        <li>PostgreSQL database with SQLAlchemy</li>
+                        <li>Accounts and transactions with decimal-safe money handling</li>
+                        <li>CSV ingestion with validation, partial success, and deduplication</li>
+                        <li>SQL-side financial analytics (income, spending, MoM, category/merchant breakdowns)</li>
+                        <li>Category review and correction with explicit provenance</li>
+                        <li>Calendar-aware recurring-payment detection</li>
+                    </ul>
+                </div>
+                <div class="case-study-media">
+                    <img src="assets/finsight_accounts.png" alt="FinSight accounts page with snapshot balances">
+                </div>
+            </div>
         </section>
 
         <section class="case-study-panel project-card">
-            <h2 class="section-title case-heading">ML <span class="italic-accent">Experiment</span></h2>
-            <p class="case-study-copy-block">
-                Offline TF-IDF + logistic regression categorization lived under a separate experiment path. Evaluation compared random stratified splits against merchant-grouped splits.
-            </p>
-            <p class="case-study-copy-block">
-                Merchant-grouped evaluation identified merchant leakage: random splits inflated performance when the same merchant appeared in both train and test. That finding reframed how “accuracy” should be interpreted for this problem.
-            </p>
-            <p class="case-note">
-                The ML classifier is not integrated into the live application. It is an offline experiment only — not a shipped feature.
-            </p>
+            <div class="case-study-split">
+                <div class="case-study-copy">
+                    <h2 class="section-title case-heading">ML <span class="italic-accent">Experiment</span></h2>
+                    <p>
+                        Offline TF-IDF + logistic regression categorization lived under a separate experiment path. Evaluation compared random stratified splits against merchant-grouped splits.
+                    </p>
+                    <p>
+                        Merchant-grouped evaluation identified merchant leakage: random splits inflated performance when the same merchant appeared in both train and test.
+                    </p>
+                    <p class="case-note">
+                        The ML classifier is not integrated into the live application. It is an offline experiment only — not a shipped feature.
+                    </p>
+                </div>
+                <div class="case-study-media">
+                    <img src="assets/finsight_category_review.png" alt="FinSight transaction category review with CSV and user provenance labels">
+                </div>
+            </div>
         </section>
 
         <section class="case-study-panel project-card">
-            <h2 class="section-title case-heading">The Decision <span class="italic-accent">Not to Ship</span></h2>
-            <p class="case-study-copy-block">
-                Grouped evaluation exposed weak generalization. Real labeled data remained insufficient for trustworthy training. I chose human review and category correction over unreliable automation.
-            </p>
+            <div class="case-study-split reverse">
+                <div class="case-study-copy">
+                    <h2 class="section-title case-heading">The Decision <span class="italic-accent">Not to Ship</span></h2>
+                    <p>
+                        Grouped evaluation exposed weak generalization. Real labeled data remained insufficient for trustworthy training. I chose human review and category correction over unreliable automation — user edits become trusted labels instead of silent model guesses.
+                    </p>
+                </div>
+                <div class="case-study-media">
+                    <img src="assets/finsight_transactions.png" alt="FinSight transactions form emphasizing category correction workflow">
+                </div>
+            </div>
         </section>
 
         <section class="case-study-panel project-card">
