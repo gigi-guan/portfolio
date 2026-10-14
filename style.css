@@ -398,14 +398,23 @@ body.garden-active .ambient-vignette {
 .stone-card:nth-child(5) .project-info,
 .stone-card:nth-child(5) .project-info p,
 .stone-card:nth-child(5) .project-info h3,
-.stone-card:nth-child(5) .project-link,
 .stone-card:nth-child(5) .tech-tag,
 .stone-card:nth-child(5) .project-type {
     color: #111;
 }
 
-.stone-card:nth-child(5) .project-link:hover {
-    color: var(--accent);
+/* Skincare card: keep body text dark, but match gold link hover of other cards */
+.stone-card[data-stone="5"] .project-link,
+.stone-card:nth-child(5) .project-link {
+    color: #111;
+    transition: color 0.25s ease;
+}
+
+.stone-card[data-stone="5"] .project-link:hover,
+.stone-card[data-stone="5"] .project-link:focus-visible,
+.stone-card:nth-child(5) .project-link:hover,
+.stone-card:nth-child(5) .project-link:focus-visible {
+    color: #c4a574;
 }
 
 .stone-card:nth-child(5) .tech-tag {
@@ -428,6 +437,31 @@ body.garden-active .ambient-vignette {
     font-size: clamp(1.15rem, 2.2vw, 1.45rem);
     color: var(--text-main);
     line-height: 1.5;
+}
+
+/* Masked character reveal for case-study / homepage heroes */
+.hero-title.is-split-hero {
+    overflow: hidden;
+    padding-bottom: 0.08em;
+}
+
+.hero-title.is-split-hero .char {
+    display: inline-block;
+    will-change: transform, opacity;
+}
+
+.case-heading .word,
+.case-study-main .section-title .word,
+.demo-section .section-title .word {
+    overflow: hidden;
+    padding-bottom: 0.06em;
+    margin-bottom: 0.02em;
+}
+
+.case-heading .char,
+.case-study-main .section-title .char,
+.demo-section .section-title .char {
+    display: inline-block;
 }
 
 /* Case study pages */

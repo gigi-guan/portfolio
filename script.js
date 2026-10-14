@@ -20,64 +20,65 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
+    const isCaseStudyPage = Boolean(
+        document.querySelector('.case-study-main, .case-study-hero, .demo-section')
+    );
+
+    if (heroTitle && !prefersReducedMotion.matches) {
+        heroTitle.classList.add('is-split-hero');
         new SplitType(heroTitle, { types: 'chars' });
 
-        gsap.from('.hero-eyebrow', {
-            y: 12,
-            opacity: 0,
+        gsap.set(heroTitle.querySelectorAll('.char'), { y: 110, opacity: 0 });
+        if (document.querySelector('.hero-eyebrow')) {
+            gsap.set('.hero-eyebrow', { y: 12, opacity: 0 });
+        }
+        if (document.querySelector('.hero-subtitle')) {
+            gsap.set('.hero-subtitle', { y: 22, opacity: 0 });
+        }
+
+        gsap.to('.hero-eyebrow', {
+            y: 0,
+            opacity: 1,
             duration: 0.8,
             delay: 0.1,
             ease: 'power3.out'
         });
 
-        gsap.from('.hero-title .char', {
-            y: 100,
-            opacity: 0,
-            duration: 1.5,
-            stagger: 0.05,
-            delay: 0.2,
+        gsap.to(heroTitle.querySelectorAll('.char'), {
+            y: 0,
+            opacity: 1,
+            duration: 1.35,
+            stagger: 0.045,
+            delay: 0.18,
             ease: 'power4.out'
         });
 
-        gsap.from('.hero-subtitle', {
-            y: 20,
-            opacity: 0,
+        gsap.to('.hero-subtitle', {
+            y: 0,
+            opacity: 1,
             duration: 1,
-            delay: 0.8,
+            delay: 0.75,
             ease: 'power3.out'
         });
 
-        gsap.from('.rake-hint', {
-            y: 16,
-            opacity: 0,
-            duration: 0.9,
-            delay: 1.4,
-            ease: 'power3.out'
-        });
+        if (document.querySelector('.rake-hint')) {
+            gsap.from('.rake-hint', {
+                y: 16,
+                opacity: 0,
+                duration: 0.9,
+                delay: 1.4,
+                ease: 'power3.out'
+            });
+        }
 
-        // Case-study pages: fade remaining hero copy after the title/subtitle beat.
-        if (document.querySelector('.case-study-main')) {
+        if (isCaseStudyPage) {
             gsap.from('.case-study-lede, .case-study-role, .case-study-hero .case-ctas', {
                 y: 18,
                 opacity: 0,
                 duration: 0.9,
-                delay: 1.05,
+                delay: 1.0,
                 stagger: 0.08,
                 ease: 'power3.out'
-            });
-
-            gsap.utils.toArray('.case-heading').forEach((heading) => {
-                gsap.from(heading, {
-                    scrollTrigger: {
-                        trigger: heading,
-                        start: 'top 88%',
-                    },
-                    y: 28,
-                    opacity: 0,
-                    duration: 0.75,
-                    ease: 'power3.out'
-                });
             });
         }
     }
@@ -91,17 +92,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initScrollAnimations() {
-        // Homepage titles only — case-study headings stay intact for readable spacing.
+        if (prefersReducedMotion.matches) return;
+
+        // Homepage section titles
         const homepageTitles = document.querySelectorAll(
             '.stone-path-section .section-title, .pavilion .section-title'
         );
-        if (homepageTitles.length) {
-            const splitTitles = new SplitType(homepageTitles, { types: 'words, chars' });
+        // Case-study headings (ClipAI/OfferLens use .section-title; ChatCHW/FinSight use .case-heading)
+        const caseStudyTitles = document.querySelectorAll(
+            '.case-study-main .case-heading, .case-study-main .section-title, .demo-section .section-title'
+        );
+        const scrollTitles = [...homepageTitles, ...caseStudyTitles];
+
+        if (scrollTitles.length) {
+            const splitTitles = new SplitType(scrollTitles, { types: 'words, chars' });
             splitTitles.chars.forEach((char) => {
                 gsap.from(char, {
                     scrollTrigger: {
                         trigger: char.parentElement,
-                        start: 'top 86%',
+                        start: 'top 88%',
                     },
                     y: 36,
                     opacity: 0,
