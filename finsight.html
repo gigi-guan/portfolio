@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinSight — Case Study</title>
+    <title>FinSight — Building Financial Intelligence You Can Trust</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
@@ -34,11 +34,11 @@
     <main class="case-study-main">
 
         <section class="case-study-hero">
-            <p class="section-label">Case Study · Fintech / Product</p>
+            <p class="section-label">Case Study · Financial Analytics / Product Engineering</p>
             <h1 class="editorial-title case-study-title">Fin<span class="italic-accent">Sight</span></h1>
-            <p class="case-study-subtitle">Turning financial transactions into actionable insights through analytics, automation, and responsible ML.</p>
+            <p class="case-study-subtitle">Building Financial Intelligence You Can Trust</p>
             <p class="case-study-lede">
-                Independently built a full-stack personal finance platform featuring transaction management, automated CSV ingestion, financial analytics, and recurring-payment detection. Developed ML categorization experiments, identified misleading performance metrics, and designed human-in-the-loop workflows to improve reliability.
+                Built a personal finance platform combining transaction analytics, recurring-payment detection, and human-in-the-loop ML evaluation, prioritizing trustworthy insights over premature automation.
             </p>
             <p class="case-study-role">Independent Developer / Product Owner</p>
             <div class="case-ctas project-links">
@@ -49,73 +49,53 @@
         <section class="case-study-panel project-card">
             <h2 class="section-title case-heading">The <span class="italic-accent">Problem</span></h2>
             <p class="case-study-copy-block">
-                Personal finance tools often prioritize dashboards over data integrity. CSV imports fail silently, categories lack provenance, and ML demos inflate accuracy with evaluation shortcuts that do not survive real merchant overlap. I wanted a local, interview-ready system that treats money as decimal-safe data and keeps ML claims honest.
+                Transform fragmented transaction histories into useful spending and cash-flow insights — without silent import failures, opaque categories, or ML claims that look strong only under the wrong evaluation setup.
             </p>
         </section>
 
         <section class="case-study-panel project-card">
             <h2 class="section-title case-heading">What I <span class="italic-accent">Built</span></h2>
             <ul class="case-list case-list-wide">
-                <li>Account and transaction management with signed amounts and category review.</li>
-                <li>CSV ingestion with validation, partial success, and deduplication.</li>
-                <li>Spending and cash-flow analytics, including month-over-month comparisons.</li>
-                <li>Category and merchant analytics computed from PostgreSQL via FastAPI.</li>
-                <li>Deterministic recurring-payment detection from transaction history.</li>
-                <li>User category correction workflow with explicit category provenance.</li>
-                <li>Offline ML transaction-classification experiments (not wired into the live API).</li>
+                <li>Next.js + TypeScript frontend</li>
+                <li>FastAPI backend</li>
+                <li>PostgreSQL database with SQLAlchemy</li>
+                <li>Accounts and transactions with decimal-safe money handling</li>
+                <li>CSV ingestion with validation, partial success, and deduplication</li>
+                <li>SQL-side financial analytics (income, spending, MoM, category/merchant breakdowns)</li>
+                <li>Category review and correction with explicit provenance</li>
+                <li>Calendar-aware recurring-payment detection</li>
             </ul>
         </section>
 
         <section class="case-study-panel project-card">
-            <h2 class="section-title case-heading">Key <span class="italic-accent">Decisions</span></h2>
+            <h2 class="section-title case-heading">ML <span class="italic-accent">Experiment</span></h2>
             <p class="case-study-copy-block">
-                During evaluation, conventional random train/test splitting inflated model performance because of merchant overlap. I introduced merchant-grouped evaluation and established minimum-data requirements before any model deployment.
+                Offline TF-IDF + logistic regression categorization lived under a separate experiment path. Evaluation compared random stratified splits against merchant-grouped splits.
             </p>
             <p class="case-study-copy-block">
-                Real trusted labels in the dataset were insufficient for meaningful training. The classifier was intentionally not integrated into the live application. Automatic ML categorization is an offline experiment — not a shipped feature.
+                Merchant-grouped evaluation identified merchant leakage: random splits inflated performance when the same merchant appeared in both train and test. That finding reframed how “accuracy” should be interpreted for this problem.
             </p>
-        </section>
-
-        <section class="case-study-panel project-card case-study-results">
-            <h2 class="section-title case-heading">Results &amp; <span class="italic-accent">Impact</span></h2>
-            <div class="highlight-grid">
-                <div class="highlight-item">
-                    <span class="highlight-value">Full-stack</span>
-                    <span class="highlight-label">Next.js UI over a FastAPI + PostgreSQL backend</span>
-                </div>
-                <div class="highlight-item">
-                    <span class="highlight-value">Provenance</span>
-                    <span class="highlight-label">Category source tracked as user, CSV, rules, model, or unknown</span>
-                </div>
-                <div class="highlight-item">
-                    <span class="highlight-value">Honest ML</span>
-                    <span class="highlight-label">Merchant-grouped evaluation exposed optimistic random-split metrics</span>
-                </div>
-                <div class="highlight-item">
-                    <span class="highlight-value">Local-first</span>
-                    <span class="highlight-label">Single-user portfolio system — no fabricated adoption or revenue metrics</span>
-                </div>
-            </div>
             <p class="case-note">
-                FinSight is a local portfolio application with no public production deployment. There is no live demo URL by design.
+                The ML classifier is not integrated into the live application. It is an offline experiment only — not a shipped feature.
             </p>
         </section>
 
         <section class="case-study-panel project-card">
-            <h2 class="section-title case-heading">Tech <span class="italic-accent">Stack</span></h2>
-            <div class="tech-stack about-tags">
-                <span class="tech-tag">Next.js</span>
-                <span class="tech-tag">TypeScript</span>
-                <span class="tech-tag">FastAPI</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">SQLAlchemy</span>
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">scikit-learn</span>
-            </div>
+            <h2 class="section-title case-heading">The Decision <span class="italic-accent">Not to Ship</span></h2>
+            <p class="case-study-copy-block">
+                Grouped evaluation exposed weak generalization. Real labeled data remained insufficient for trustworthy training. I chose human review and category correction over unreliable automation.
+            </p>
+        </section>
+
+        <section class="case-study-panel project-card">
+            <h2 class="section-title case-heading"><span class="italic-accent">Lessons</span></h2>
+            <p class="case-study-copy-block">
+                Product decisions should be grounded in evidence, not the appearance of AI sophistication. Keeping ML offline preserved user trust and made the shipped product’s limits explicit.
+            </p>
         </section>
 
         <div class="case-stack-bar">
-            <p>Fintech · Full-Stack Development · Financial Analytics · Product Development · Machine Learning · Python · Next.js · PostgreSQL</p>
+            <p>Next.js · TypeScript · FastAPI · PostgreSQL · SQLAlchemy · Python · scikit-learn</p>
         </div>
 
         <div class="case-back">
